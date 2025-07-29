@@ -14,7 +14,7 @@ function App() {
         <div className='max-w-lg mx-auto'>
           <div className='space-y-2'>
           {mydata.map(todo=>(
-            <TodoItem/>
+            <TodoItem todo={todo}/>
           ))
 
           }

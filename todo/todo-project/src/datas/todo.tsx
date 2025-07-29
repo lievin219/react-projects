@@ -3,7 +3,7 @@ import { Todo } from "../types/todo"
 export const mydata:Todo[]=[
     {id:1,
     title:'like this video 👍🏾',
-    completed:false
+    completed:true
     }, 
      {id:2,
     title:'Go To  the Gym 🏋️‍♂️',
