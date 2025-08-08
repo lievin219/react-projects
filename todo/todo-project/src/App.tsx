@@ -3,6 +3,7 @@ import TodoItem from './components/TodoItem'
 
 import { mydata } from './datas/todo'
 import { AddToForm } from './components/AddToForm'
+import { TodoList } from './components/TodoList'
 
 function App() {
 
@@ -14,7 +15,17 @@ prevTodos.map(todo=>
 (todo.id===id?{...todo,completed}:todo)
 ))
   }
-
+ function addTodo(title:string){
+   setTodos(prevTodos=> [
+    {
+      id:prevTodos.length+1,
+      title:title,
+      completed:false
+     
+    },
+    ...prevTodos
+   ])
+ }
 
   return (
    
@@ -22,17 +33,9 @@ prevTodos.map(todo=>
 
         <h1 className='text-center font-bold text-3xl'>Your Todos</h1>
         <div className='max-w-lg mx-auto p-5 space-y-6'>
-          <AddToForm/>
-          <div className='space-y-2'>
-          {todos.map(todo=>(
-            <TodoItem
-            key={todo.id} todo={todo}
-           
-            onCompletedChange={setTodoCompleted}/>
-          ))
-
-          }
-          </div>
+          <AddToForm onSubmit={addTodo}/>
+          <TodoList/>
+          
         </div>
         </main>
   

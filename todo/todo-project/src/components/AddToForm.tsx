@@ -1,14 +1,20 @@
 import React, { useState } from 'react'
 
-export const AddToForm = () => {
+interface AddToFormProps{
+
+    onSubmit:(title:string)=>void
+
+       }
+
+export const AddToForm = ({onSubmit}:AddToFormProps) => {
     const [input,setinput]=useState("")
-    interface Adding{
-        
-    }
+   
 
      function handlesubmitt(e:React.FormEvent<HTMLFormElement>){
   e.preventDefault()
   if(!input.trim()) return ;
+  onSubmit(input)
+  setinput("")
      }
 
   return (
