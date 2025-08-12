@@ -27,6 +27,11 @@ prevTodos.map(todo=>
     ...prevTodos
    ])
  }
+  function deleteTodo(id:number){
+   setTodos(prevtodos=>prevtodos.filter(todo=>todo.id!==id))
+
+
+  }
 
   return (
    
@@ -37,7 +42,8 @@ prevTodos.map(todo=>
           <AddToForm onSubmit={addTodo}/>
           <TodoList
           todos={todos}
-          onCompletedChange={setTodoCompleted}/>
+          onCompletedChange={setTodoCompleted}
+          onDelete={deleteTodo}/>
           
         </div>
         </main>

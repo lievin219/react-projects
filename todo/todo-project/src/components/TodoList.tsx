@@ -24,7 +24,8 @@ export const TodoList = ({todos,onCompletedChange,onDelete}:TodoListProps) => {
                 <TodoItem
                 key={todo.id} todo={todo}
                
-                onCompletedChange={onCompletedChange}/>
+                onCompletedChange={onCompletedChange}
+                onDelete={onDelete}/>
               ))
     
               }
