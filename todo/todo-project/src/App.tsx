@@ -1,4 +1,5 @@
-import {React, useState} from 'react'
+import { useState} from 'react'
+import React from 'react'
 import TodoItem from './components/TodoItem'
 
 import { mydata } from './datas/todo'
@@ -34,7 +35,9 @@ prevTodos.map(todo=>
         <h1 className='text-center font-bold text-3xl'>Your Todos</h1>
         <div className='max-w-lg mx-auto p-5 space-y-6'>
           <AddToForm onSubmit={addTodo}/>
-          <TodoList/>
+          <TodoList
+          todos={todos}
+          onCompletedChange={setTodoCompleted}/>
           
         </div>
         </main>
