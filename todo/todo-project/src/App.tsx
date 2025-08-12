@@ -10,7 +10,7 @@ function App() {
 
    const [todos,setTodos]=useState(mydata)
   function setTodoCompleted(id:number,completed:boolean){
-alert(`Todo with ${id} is now ${completed?"completed":" not completed"}`)
+
 setTodos((prevTodos) =>
 prevTodos.map(todo=>
 (todo.id===id?{...todo,completed}:todo)
